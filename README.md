@@ -1,6 +1,27 @@
 # AngularDataTable
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4. We're creating a single page angular application from CLI command and then integrate material with it and create a sample data table using MatTableModule and mat-table directive.The data table will support pagination, sorting, filtering and row selection provided by MatPaginator and matSort in MatPaginatorModule and MatSortModule.
+
+To enable pagination, angular provides mat-paginator directive that accepts required parameter to perform pagination.This directive should be placed after the mat-table directive.But before using this directive, we need to import MatPaginatorModule in the our material.module.ts.
+
+
+For filtering material does not provide any specific directive similar to sorting and pagination but we can achieve filtering by defining our custom method for it.We can have a similar implementation like below which can be called from .html on keyup event.
+
+`<mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    </mat-form-field>`
+    
+`applyFilter(filterValue: string) {
+
+    filterValue = filterValue.trim();
+    
+    filterValue = filterValue.toLowerCase();
+    
+    this.dataSource.filter = filterValue;
+    
+
+}`
+  
 
 ## Development server
 
