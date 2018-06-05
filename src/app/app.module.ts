@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-
+import {MaterialModule   } from './material/material.module';
 import { AppComponent } from './app.component';
+import {MatTableModule} from '@angular/material';
 
 
 @NgModule({
@@ -10,7 +11,12 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    MaterialModule,
+    MatTableModule
+  ],
+  exports: [
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
