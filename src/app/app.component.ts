@@ -43,7 +43,7 @@ export class AppComponent implements OnInit {
 
 /** Builds and returns a new User. */
 function createNewUser(id: number): UserData {
-  const name =
+  const name = 'Dr.' +
       NAMES[Math.round(Math.random() * (NAMES.length - 1))] + ' ' +
       NAMES[Math.round(Math.random() * (NAMES.length - 1))];
 
